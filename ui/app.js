@@ -8,7 +8,13 @@
 
     $scope.add_bomb = function(delay) {
       console.log("add_bomb(", delay, ")")
-      $scope.bombs.push(new Bomb(delay * 1000));
+      var bomb = new Bomb(delay * 1000);
+      $scope.bombs.push(bomb);
+
+      bomb.promise.then(function() {
+        bomb.resolved = true;
+      });
+
     }
 
     $scope.$on("boom", function() {

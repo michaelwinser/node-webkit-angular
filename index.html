@@ -7,7 +7,7 @@
   <body ng-app="app" ng-controller="MainController">
     <div>explosions: {{explosions}}</div>
     <div ng-repeat="bomb in bombs">
-      bomb {{bomb.exploded}} <a href="" ng-click="stop(bomb)">stop</a>
+      bomb.exploded {{bomb.exploded}} bomb.resolved {{bomb.resolved}} <a href="" ng-click="stop(bomb)">stop</a>
     </div>
     <form >
       <input type="number" ng-model="delay"> <input ng-click="add_bomb(delay)" type="submit">
